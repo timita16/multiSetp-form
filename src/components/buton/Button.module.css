@@ -1,0 +1,27 @@
+.SectionButton {
+    align-items: center;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    position: fixed;
+    padding: 20px;
+    width: 100%;
+    margin-top: 50px;
+}
+.SectionButtonFalso {
+    justify-content: end;
+}
+.back {
+
+}
+.next {
+    background-color: hsl(213, 96%, 18%);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    outline: none;
+    padding: 10px;
+}

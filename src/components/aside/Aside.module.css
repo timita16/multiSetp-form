@@ -1,0 +1,30 @@
+.aside {
+    background-image: url("../../assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    height: 200px;
+    width: 100%;
+}
+.divStep {
+    padding-top: 30px;
+}
+.divStepDescription {
+    display: none;
+}
+.numeration {
+    margin: 0%;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 100%;
+}
+.numerationActiva {
+    color: hsl(213, 96%, 18%);
+    background-color: hsl(206, 94%, 87%);
+    margin: 0%;
+    padding: 6px 9px;
+    border-radius: 100%;
+}
