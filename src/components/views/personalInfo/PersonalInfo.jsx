@@ -1,8 +1,17 @@
-import React from 'react'
+import errorForm from '../../helpers/errorForm';
+import useForm from '../../hooks/useForm'
 import Button from '../buton/Button'
 import PersonalModule from "./Personal.module.css"
 
 const PersonalInfo = () => {
+  let {
+    form,
+    handleChange,
+    handleError,
+  } = useForm();
+  let {
+    error
+  } = errorForm(form);
   return (
     <>
       <section className={PersonalModule.sectionPrincipal}>
@@ -13,7 +22,7 @@ const PersonalInfo = () => {
         <div className={PersonalModule.divTodosLosInputos}>
           <div className={PersonalModule.divLabelInput}>
             <label 
-              for="name"
+              htmlFor="name"
               className={PersonalModule.label} >
               Name
             </label>
@@ -22,12 +31,15 @@ const PersonalInfo = () => {
               placeholder="e.g. Sthepen King"
               name='name'
               id='name'
-              className={PersonalModule.input}
+              onChange={handleChange}
+              value={form.name}
+              className={`${PersonalModule.input} ${error.name && PersonalModule.inputError}`}
             />
+            {error.name && <p className={PersonalModule.msgError}>{error.name}</p>}
           </div>
           <div className={PersonalModule.divLabelInput}>
             <label 
-              for="email"
+              htmlFor="email"
               className={PersonalModule.label}>
               Email address
             </label>
@@ -36,12 +48,15 @@ const PersonalInfo = () => {
               placeholder="e.g. SthepenKing@gmail.com"
               name='email'
               id='email'
-              className={PersonalModule.input}
+              onChange={handleChange}
+              value={form.email}
+              className={`${PersonalModule.input} ${error.email && PersonalModule.inputError}`}
             />
+            {error.email && <p className={PersonalModule.msgError}>{error.email}</p>}
           </div>
           <div className={PersonalModule.divLabelInput}>
             <label 
-              for="number"
+              htmlFor="number"
               className={PersonalModule.label}>
                 Phone number
             </label>
@@ -50,12 +65,15 @@ const PersonalInfo = () => {
               placeholder="e.g. +1 234 567 890"
               name='number'
               id='number'
-              className={PersonalModule.input}
+              onChange={handleChange}
+              value={form.number}
+              className={`${PersonalModule.input} ${error.number && PersonalModule.inputError}`}
             />
+            {error.number && <p className={PersonalModule.msgError}>{error.number}</p>}
           </div>
         </div>
       </section>
-      <Button next="plan2" />
+      <Button next="plan2" error={error} handleError={handleError}  />
     </>
   )
 }

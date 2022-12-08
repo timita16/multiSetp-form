@@ -1,6 +1,6 @@
 import './App.css';
-import Aside from './components/aside/Aside';
-import Form from './components/form/Form';
+import Aside from './components/views/aside/Aside';
+import Form from './components/views/form/Form';
 
 function App() {
   return (

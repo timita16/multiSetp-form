@@ -2,19 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ButtonModule from "./Button.module.css";
 
-const Button = ({back, next}) => {
+const Button = ({back, next, error, handleError}) => {
   return (
     <section className={`${ButtonModule.SectionButton} ${!back && ButtonModule.SectionButtonFalso} ` }>
         {
             !back 
             ? ""
             : <Link to={back}>
-                <button className={`${ButtonModule.button} ${ButtonModule.back}`}>Go back</button>
+                <p className={`${ButtonModule.button} ${ButtonModule.back}`}>Go back</p>
             </Link> 
         }
-        <Link to={next}>
+        {/*<Link to={next}>
             <button className={`${ButtonModule.button} ${ButtonModule.next}`}>Next Step</button>
-        </Link>
+      </Link>*/}
+      <p onClick={() => handleError(error, next)} className={`${ButtonModule.button} ${ButtonModule.next}`}>next Step</p>
     </section>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Plan from '../components/plan/Plan'
+import Plan from '../components/views/plan/Plan'
 
 const Step2 = () => <Plan />
 

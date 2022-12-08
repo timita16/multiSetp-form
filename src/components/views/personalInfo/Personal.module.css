@@ -27,8 +27,19 @@
     border-radius: 5px;
     height: 37px;
     padding-left: 20px;
+    outline: none;
 }
 .input::placeholder {
     font-weight: 600;
     color: hsl(231, 11%, 63%);
+}
+.inputError {
+    border-color: red;
+}
+.msgError {
+    color: red;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 10px;
+    font-weight: 600;
 }

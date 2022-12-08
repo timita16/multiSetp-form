@@ -1,5 +1,5 @@
 import React from 'react'
-import Pick from '../components/pickAddOns/Pick'
+import Pick from '../components/views/pickAddOns/Pick'
 
 const Step3 = () => <Pick />
 

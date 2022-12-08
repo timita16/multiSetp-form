@@ -1,9 +1,9 @@
 import React from 'react'
 import { Route, Routes } from "react-router-dom";
-import Step1 from '../../routes/Step1';
-import Step2 from '../../routes/Step2';
-import Step3 from '../../routes/Step3';
-import Step4 from '../../routes/Step4';
+import Step1 from '../../../routes/Step1';
+import Step2 from '../../../routes/Step2';
+import Step3 from '../../../routes/Step3';
+import Step4 from '../../../routes/Step4';
 import Error from '../error/Error';
 import FormMudule from "./Form.module.css"
 

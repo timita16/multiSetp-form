@@ -1,5 +1,5 @@
 import React from 'react'
-import Finishing from '../components/finishing/Finishing'
+import Finishing from '../components/views/finishing/Finishing'
 
 const Step4 = () => <Finishing />
 
