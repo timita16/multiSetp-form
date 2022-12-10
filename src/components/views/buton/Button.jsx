@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ButtonModule from "./Button.module.css";
 
 const Button = ({back, next, error, handleError}) => {
@@ -8,14 +8,11 @@ const Button = ({back, next, error, handleError}) => {
         {
             !back 
             ? ""
-            : <Link to={back}>
-                <p className={`${ButtonModule.button} ${ButtonModule.back}`}>Go back</p>
-            </Link> 
+            : <NavLink to={back}className={`${ButtonModule.button} ${ButtonModule.back}`}>
+                Go back
+            </NavLink> 
         }
-        {/*<Link to={next}>
-            <button className={`${ButtonModule.button} ${ButtonModule.next}`}>Next Step</button>
-      </Link>*/}
-      <p onClick={() => handleError(error, next)} className={`${ButtonModule.button} ${ButtonModule.next}`}>next Step</p>
+      <p onClick={() => handleError(error, next)} className={`${ButtonModule.button} ${ButtonModule.next}`}>Next Step</p>
     </section>
   )
 }

@@ -12,6 +12,8 @@ const PersonalInfo = () => {
   let {
     error
   } = errorForm(form);
+  
+  
   return (
     <>
       <section className={PersonalModule.sectionPrincipal}>
