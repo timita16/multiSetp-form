@@ -11,20 +11,63 @@
     flex-direction: column;
     gap: 20px;
 }
-/*.divLabel {
+.divLabel {
     border: thin solid gray;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
     padding: 10px;
-}*/
-input[type="radio" i] {
+    gap: 10px;
+}
+.input[type="radio" i] {
     display: none;
 }
-.input[type=radio] + label {
-    border: thin solid gray;
-    border-radius: 5px;
-    padding: 10px;
-}
 .input[type=radio]:checked + label {
+    padding: 15px;
     border: 1px solid blue;
     z-index: 1;
+}
+.divLabelPrecio {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.label {
+    color:  hsl(213, 96%, 18%);
+    font-size: 15px;
+    font-weight: 500;
+}
+.precio {
+    margin: 0%;
+    font-size: 12px;
+    opacity: 0.4;
+    font-weight: 600;
+}
+.divPlan {
+    border-radius: 5px;
+    background-color: hsl(217, 100%, 97%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px;
+}
+.divLabelInputPlan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.divLabelInputPlan:first-child {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.labelPlan {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.4;
+}
+.inputPlan[type=radio]:checked + .labelPlan{
+    color: hsl(213, 96%, 18%);
+    opacity: 1;
 }
