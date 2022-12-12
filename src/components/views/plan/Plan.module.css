@@ -1,4 +1,3 @@
-
 .h1 {
     color: hsl(213, 96%, 18%);
 }
@@ -9,39 +8,101 @@
 .divLabelInput {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+    margin-top: 20px
 }
-.divLabel {
+.divLLABEL {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.labelL {
+    width: 100%;
+    padding: 15px 20px 25px 60px;
     border: thin solid gray;
     border-radius: 5px;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    gap: 10px;
-}
-.input[type="radio" i] {
-    display: none;
-}
-.input[type=radio]:checked + label {
-    padding: 15px;
-    border: 1px solid blue;
-    z-index: 1;
-}
-.divLabelPrecio {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-.label {
     color:  hsl(213, 96%, 18%);
     font-size: 15px;
     font-weight: 500;
 }
-.precio {
-    margin: 0%;
+
+.labelL::before {
+    content: url("../../../assets/images/icon-arcade.svg");
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.labelL::after {
+    content: "$9/mo";
+    position: absolute;
     font-size: 12px;
     opacity: 0.4;
     font-weight: 600;
+    bottom: 14px;
+    left: 60px;
+}
+.labelL2 {
+    width: 100%;
+    padding: 15px 20px 25px 60px;
+    border: thin solid gray;
+    border-radius: 5px;
+    color:  hsl(213, 96%, 18%);
+    font-size: 15px;
+    font-weight: 500;
+}
+.labelL2::before {
+    content: url("../../../assets/images/icon-advanced.svg");
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.labelL2::after {
+    content: "$12/mo";
+    position: absolute;
+    font-size: 12px;
+    opacity: 0.4;
+    font-weight: 600;
+    bottom: 14px;
+    left: 60px;
+}
+.labelL3 {
+    width: 100%;
+    padding: 15px 20px 25px 60px;
+    border: thin solid gray;
+    border-radius: 5px;
+    color:  hsl(213, 96%, 18%);
+    font-size: 15px;
+    font-weight: 500;
+}
+.labelL3::before {
+    content: url("../../../assets/images/icon-pro.svg");
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.labelL3::after {
+    content: "$15/mo";
+    position: absolute;
+    font-size: 12px;
+    opacity: 0.4;
+    font-weight: 600;
+    bottom: 14px;
+    left: 60px;
+}
+.divLLABELYear {
+    padding: 15px 20px 35px 60px;
+}
+.input[type="radio" i] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+.input[type=radio]:checked + label {
+    border: 1px solid hsl(213, 47%, 37%);
+    background-color: hsla(213, 71%, 55%, 0.293);
 }
 .divPlan {
     border-radius: 5px;
@@ -49,25 +110,46 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     margin-top: 20px;
     padding: 15px;
 }
-.divLabelInputPlan {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-.divLabelInputPlan:first-child {
-    display: flex;
-    flex-direction: row-reverse;
-}
 .labelPlan {
+    margin: 0%;
     font-size: 14px;
+    color: hsl(213, 96%, 18%);
     font-weight: 500;
+}
+.labelPlanActive {
+    color: gray;
     opacity: 0.4;
 }
-.inputPlan[type=radio]:checked + .labelPlan{
-    color: hsl(213, 96%, 18%);
-    opacity: 1;
+.divButon {
+    display: flex;
+    align-items: center;
+    background-color: hsl(213, 96%, 18%);
+    height: 20px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 5;
+}
+.span {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    left: 5px;
+    z-index: 6;
+    transition: left 0.5s ease-in-out;
+}
+.spanActive {
+    left: 27px;
+    transition: left 0.5s ease-in-out;
+}
+.labelPlanActive {
+    color: rgb(128 128 128 / 86%);
+}
+.boton[type=radio i] {
+    opacity: 0;
 }

@@ -4,7 +4,9 @@ import {useNavigate} from "react-router-dom"
 const initialForm = {
     name:"",
     email:"",
-    number:""
+    number:"",
+    plan:"arcade",
+    membresia:"monthly"
 }
 
 const useForm = () => {
@@ -16,7 +18,7 @@ const useForm = () => {
         setForm({
             ...form,
             [e.target.name]:e.target.value
-        })
+        });
     }
 
     const handleSubmit = (e) => {
