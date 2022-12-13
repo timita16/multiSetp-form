@@ -8,7 +8,6 @@ const Plan = () => {
     form,
     handleChange,
   } = useForm();
-  console.log(form)
   return (
     <>
       <section>
@@ -19,7 +18,7 @@ const Plan = () => {
         <div className={PlanModule.divLabelInput}>
           <div className={PlanModule.divLLABEL}>
             <input type="radio" name='plan' id='plan1' value="arcade" className={PlanModule.input} onChange={handleChange} defaultChecked />
-            <label htmlFor='plan1' className={PlanModule.labelL}>Arcade</label>
+            <label htmlFor='plan1' className={`${PlanModule.labelL} ${form.membresia === "yearly" && PlanModule.divLLABELYear}`}>Arcade</label>
             {form.membresia === "yearly" && <p className={PlanModule.monthFree}>2 month free</p>}
           </div>
           <div className={PlanModule.divLLABEL}>
@@ -29,7 +28,7 @@ const Plan = () => {
           </div>
           <div className={PlanModule.divLLABEL}>
             <input type="radio" name='plan' id='plan3' value="pro" className={PlanModule.input} onChange={handleChange}  />
-            <label htmlFor='plan3' className={PlanModule.labelL3}>Advanced</label>
+            <label htmlFor='plan3' className={`${PlanModule.labelL3} ${form.membresia === "yearly" && PlanModule.divLLABELYear}`}>Advanced</label>
             {form.membresia === "yearly" && <p className={PlanModule.monthFree}>2 month free</p>}
           </div>
         </div>
@@ -56,7 +55,7 @@ const Plan = () => {
           <p className={`${PlanModule.labelPlan} ${form.membresia === "monthly" && PlanModule.labelPlanActive}`}>Yearly</p>
         </div>
       </section>
-      <Button next="plan2" back="/"  />
+      <Button next="pick3" back="/" error={{}} />
     </>
   )
 }

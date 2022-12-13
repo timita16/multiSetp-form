@@ -1,18 +1,21 @@
-import { useState } from 'react'
-import {useNavigate} from "react-router-dom"
+import { useRef, useState } from 'react'
 
 const initialForm = {
     name:"",
     email:"",
     number:"",
     plan:"arcade",
-    membresia:"monthly"
+    membresia:"monthly",
+}
+const initialCheck = {
+  onlineService:false,
+  checkBoxStorage:false,
+  customizableProfile:false
 }
 
 const useForm = () => {
     const [form, setForm] = useState(initialForm);
-    const navigate = useNavigate();
-
+    const [check, setCheck] = useState(initialCheck)
 
     const handleChange = (e) => {
         setForm({
@@ -21,19 +24,23 @@ const useForm = () => {
         });
     }
 
-    const handleSubmit = (e) => {
-
+    const handleCheck = (e) => {
+        setCheck({
+            ...check,
+            [e.target.name]:e.target.checked
+        });
     }
 
-    const handleError = (error, next) => {
-        if(Object.values(error).length === 0) return navigate(`/${next}`)        
+    const handleSubmit = (e) => {
+
     }
 
   return {
     handleChange,
     form,
     handleSubmit,
-    handleError,
+    handleCheck,
+    check,
   }
 }
 

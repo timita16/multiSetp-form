@@ -1,0 +1,146 @@
+.h1 {
+    color: hsl(213, 96%, 18%);
+}
+.subtitle {
+    opacity: 0.4;
+    font-size: 15px;
+}
+.divCheckBoxAll {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.divLabelInput {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.inputCheck[type=checkbox] {
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
+    position: absolute;
+}
+.inputCheck[type=checkbox]::before, .inputCheck[type=checkbox]::after {
+    border: 1px solid black;
+    border-radius: 5px;
+    content: "";
+    display: block;
+    height: 20px;
+    left: 5px;
+    position: absolute;
+    top: -10px;
+    width: 20px;
+}
+.inputCheck[type=checkbox]:checked:before {
+    content: "";
+    background-color: hsl(243, 100%, 62%);
+}
+.inputCheck[type=checkbox]:checked:after {
+    content: url("../../../assets/images/check-solid.svg");  
+    filter: invert(1);
+    width: 15px;
+    border: none;
+    left: 9px;
+    top: -7px;
+}
+.label {
+    border: thin solid rgb(221, 221, 221);
+    color: hsl(213, 96%, 18%);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px 15px 22px 35px;
+    width: 100%;
+}
+.labelText::before {
+    content: "Access to multiplayer games";
+    color: #bfbfbf;
+    position: absolute;
+    bottom: 5px;
+    left: 36px;
+    font-size: 12px;
+}
+.labelText2::before {
+    content: "Extra 1TB of cloud save";
+    color: #bfbfbf;
+    position: absolute;
+    bottom: 5px;
+    left: 36px;
+    font-size: 12px;
+}
+.labelText3::before {
+    content: "Custom theme on your profile";
+    color: #bfbfbf;
+    position: absolute;
+    bottom: 5px;
+    left: 36px;
+    font-size: 12px;
+}
+.labelMonth1::after {
+    content: "+$1/mo";
+    font-size: 12px;
+    color: hsl(213, 53%, 41%);
+    font-weight: 500;
+    position: absolute;
+    right: 10px;
+    top: 16px;
+}
+.labelYear1::after {
+    content: "+$10/mo";
+    font-size: 12px;
+    color: hsl(213, 53%, 41%);
+    font-weight: 500;
+    position: absolute;
+    right: 10px;
+    top: 16px;
+}
+.labelMonth2::after {
+    content: "+$2/mo";
+    font-size: 12px;
+    color: hsl(213, 53%, 41%);
+    font-weight: 500;
+    position: absolute;
+    right: 10px;
+    top: 16px;
+}
+.labelYear2::after {
+    content: "+$20/mo";
+    font-size: 12px;
+    color: hsl(213, 53%, 41%);
+    font-weight: 500;
+    position: absolute;
+    right: 10px;
+    top: 16px;
+}
+.labelMonth3::after {
+    content: "+$2/mo";
+    font-size: 12px;
+    color: hsl(213, 53%, 41%);
+    font-weight: 500;
+    position: absolute;
+    right: 10px;
+    top: 16px;
+}
+.labelYear3::after {
+    content: "+$20/mo";
+    font-size: 12px;
+    color: hsl(213, 53%, 41%);
+    font-weight: 500;
+    position: absolute;
+    right: 10px;
+    top: 16px;
+}
+.inputCheck[type=checkbox]:checked + label {
+    border: 1px solid hsl(213, 47%, 37%);
+    background-color: hsla(213, 71%, 55%, 0.293);
+}
+.price {
+    font-size: 10px;
+    color: hsl(213, 53%, 41%);
+    font-weight: 600;
+    justify-self: end;
+}

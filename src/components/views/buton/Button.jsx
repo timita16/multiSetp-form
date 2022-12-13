@@ -1,8 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import ButtonModule from "./Button.module.css";
+import { NavLink } from 'react-router-dom';
+import {useNavigate} from "react-router-dom"
 
-const Button = ({back, next, error, handleError}) => {
+const Button = ({back, next, error}) => {
+  const navigate = useNavigate();
+
+  const handleError = () => {
+    if(Object.values(error).length === 0) return navigate(`/${next}`) 
+  }
+
   return (
     <section className={`${ButtonModule.SectionButton} ${!back && ButtonModule.SectionButtonFalso} ` }>
         {
@@ -12,7 +19,7 @@ const Button = ({back, next, error, handleError}) => {
                 Go back
             </NavLink> 
         }
-      <p onClick={() => handleError(error, next)} className={`${ButtonModule.button} ${ButtonModule.next}`}>Next Step</p>
+      <p onClick={handleError} className={`${ButtonModule.button} ${ButtonModule.next}`}>Next Step</p>
     </section>
   )
 }

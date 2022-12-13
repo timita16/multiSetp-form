@@ -7,13 +7,10 @@ const PersonalInfo = () => {
   let {
     form,
     handleChange,
-    handleError,
   } = useForm();
   let {
     error
   } = errorForm(form);
-  
-  
   return (
     <>
       <section className={PersonalModule.sectionPrincipal}>
@@ -75,7 +72,7 @@ const PersonalInfo = () => {
           </div>
         </div>
       </section>
-      <Button next="plan2" error={error} handleError={handleError}  />
+      <Button next="plan2" error={error}   />
     </>
   )
 }
