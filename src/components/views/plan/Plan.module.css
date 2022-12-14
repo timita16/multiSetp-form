@@ -91,12 +91,37 @@
     bottom: 14px;
     left: 60px;
 }
-.divLLABELYear {
+.divLLABELYear::after {
+    content: "$90/yr";
+    position: absolute;
+    font-size: 12px;
+    opacity: 0.4;
+    font-weight: 600;
+    bottom: 26px;
+    left: 60px;
+}
+.divLLABELYear2::after {
+    content: "$120/yr";
+    position: absolute;
+    font-size: 12px;
+    opacity: 0.4;
+    font-weight: 600;
+    bottom: 26px;
+    left: 60px;
+}
+.divLLABELYear3::after {
+    content: "$150/yr";
+    position: absolute;
+    font-size: 12px;
+    opacity: 0.4;
+    font-weight: 600;
+    bottom: 26px;
+    left: 60px;
+}
+.divLLABELYear, .divLLABELYear2, .divLLABELYear3 {
     padding: 12px 0px 40px 60px;
 }
-.divLLABELYear::after {
-    bottom: 26px;
-}
+
 .input[type="radio" i] {
     position: absolute;
     width: 100%;

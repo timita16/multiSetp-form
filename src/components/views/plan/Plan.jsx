@@ -23,12 +23,12 @@ const Plan = () => {
           </div>
           <div className={PlanModule.divLLABEL}>
             <input type="radio" name='plan' id='plan2' value="advanced" className={PlanModule.input} onChange={handleChange}  />
-            <label htmlFor='plan2' className={`${PlanModule.labelL2} ${form.membresia === "yearly" && PlanModule.divLLABELYear}`}>Advanced</label>
+            <label htmlFor='plan2' className={`${PlanModule.labelL2} ${form.membresia === "yearly" && PlanModule.divLLABELYear2}`}>Advanced</label>
             {form.membresia === "yearly" && <p className={PlanModule.monthFree}>2 month free</p>}
           </div>
           <div className={PlanModule.divLLABEL}>
             <input type="radio" name='plan' id='plan3' value="pro" className={PlanModule.input} onChange={handleChange}  />
-            <label htmlFor='plan3' className={`${PlanModule.labelL3} ${form.membresia === "yearly" && PlanModule.divLLABELYear}`}>Advanced</label>
+            <label htmlFor='plan3' className={`${PlanModule.labelL3} ${form.membresia === "yearly" && PlanModule.divLLABELYear3}`}>Advanced</label>
             {form.membresia === "yearly" && <p className={PlanModule.monthFree}>2 month free</p>}
           </div>
         </div>
