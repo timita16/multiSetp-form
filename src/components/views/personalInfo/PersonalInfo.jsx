@@ -1,16 +1,16 @@
 import errorForm from '../../helpers/errorForm';
-import useForm from '../../hooks/useForm'
 import Button from '../buton/Button'
 import PersonalModule from "./Personal.module.css"
+import formContext from '../../context/Form';
+import { useContext } from 'react';
 
 const PersonalInfo = () => {
   let {
     form,
     handleChange,
-  } = useForm();
-  let {
-    error
-  } = errorForm(form);
+  } = useContext(formContext);
+  console.log(form)
+  let {error} = errorForm(form);
   return (
     <>
       <section className={PersonalModule.sectionPrincipal}>

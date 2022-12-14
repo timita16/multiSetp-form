@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Button from '../buton/Button'
 import PlanModule from "./Plan.module.css"
-import useForm from '../../hooks/useForm'
+import formContext from '../../context/Form'
 
 const Plan = () => {
   let {
     form,
     handleChange,
-  } = useForm();
+  } = useContext(formContext)
   return (
     <>
       <section>

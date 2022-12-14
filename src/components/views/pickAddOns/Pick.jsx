@@ -1,15 +1,13 @@
-import React from 'react'
-import useForm from '../../hooks/useForm';
+import React, { useContext } from 'react'
+import formContext from '../../context/Form';
 import Button from '../buton/Button'
 import PickModule from "./Pick.module.css"
 
 const Pick = () => {
   let {
     check,
-    form,
     handleCheck,
-  } = useForm();
-  console.log(check)
+  } = useContext(formContext);
   return (
     <>
       <section>

@@ -25,3 +25,11 @@
     outline: none;
     padding: 10px;
 }
+.confimar {
+    background-color: hsl(243, 100%, 62%);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}

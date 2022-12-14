@@ -1,6 +1,6 @@
 import React from 'react'
-import Finishing from '../components/views/finishing/Finishing'
+import FinishingUp from '../components/views/finishing up/FinishingUp'
 
-const Step4 = () => <Finishing />
+const Step4 = () => <FinishingUp />
 
 export default Step4

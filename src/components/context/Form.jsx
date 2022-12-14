@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import {createContext, useState } from 'react'
 
 const initialForm = {
     name:"",
@@ -13,7 +13,9 @@ const initialCheck = {
   customizableProfile:false
 }
 
-const useForm = () => {
+const formContext = createContext();
+
+export const FormProvider = ({children}) => {
     const [form, setForm] = useState(initialForm);
     const [check, setCheck] = useState(initialCheck)
 
@@ -32,16 +34,17 @@ const useForm = () => {
     }
 
     const handleSubmit = (e) => {
-
+      e.preventDefault();
+      console.log("Enviar")
     }
-
-  return {
-    handleChange,
-    form,
-    handleSubmit,
-    handleCheck,
-    check,
-  }
+    let datas = {
+      handleChange,
+      form,
+      handleSubmit,
+      handleCheck,
+      check,
+    }
+  return <formContext.Provider value={datas}>{children}</formContext.Provider>
 }
 
-export default useForm
+export default formContext
