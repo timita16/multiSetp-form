@@ -24,7 +24,7 @@ export const FormProvider = ({children}) => {
             ...form,
             [e.target.name]:e.target.value
         });
-    }
+    };
 
     const handleCheck = (e) => {
         setCheck({
@@ -35,7 +35,7 @@ export const FormProvider = ({children}) => {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log("Enviar")
+      console.log("Enviar");
     }
     let datas = {
       handleChange,

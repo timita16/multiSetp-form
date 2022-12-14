@@ -3,14 +3,15 @@ import price from '../../helpers/price';
 import Button from '../buton/Button';
 import FinishingUpModule from "./FinishinUp.module.css"
 import formContext from '../../context/Form';
+import precioTotal from '../../helpers/precioTotal';
 
 const FinishingUp = () => {
     let {
         form,
         check
       } = useContext(formContext);
-    let precio= price(form.plan, form.membresia);
-
+    let precio = price(form.plan, form.membresia);
+    let precioTotal1 = precioTotal(precio, check, form.membresia) 
   return (
     <>
         <section>
@@ -30,28 +31,40 @@ const FinishingUp = () => {
                             check.onlineService &&
                             <div className={FinishingUpModule.divPriceInfo}>
                                 <p className={FinishingUpModule.informacion}>Online service</p>
-                                <p className={FinishingUpModule.price2}>+${precio}/{form.membresia === "yearly" ? "yr" : "mo"}</p>
+                                <p className={FinishingUpModule.price2}>
+                                    +${form.membresia === "yearly" ? 10 : 1}
+                                    /
+                                    {form.membresia === "yearly" ? "yr" : "mo"}
+                                </p>
                             </div>
                         }
                         {
                             check.checkBoxStorage &&
                             <div className={FinishingUpModule.divPriceInfo}>
                                 <p className={FinishingUpModule.informacion}>Larger storage</p>
-                                <p className={FinishingUpModule.price2}>+${precio}/{form.membresia === "yearly" ? "yr" : "mo"}</p>
+                                <p className={FinishingUpModule.price2}>
+                                    +${form.membresia === "yearly" ? 20 : 2}
+                                    /
+                                    {form.membresia === "yearly" ? "yr" : "mo"}
+                                </p>
                             </div>
                         }
                         {
                             check.customizableProfile &&
                             <div className={FinishingUpModule.divPriceInfo}>
                                 <p className={FinishingUpModule.informacion}>Online service</p>
-                                <p className={FinishingUpModule.price2}>+${precio}/{form.membresia === "yearly" ? "yr" : "mo"}</p>
+                                <p className={FinishingUpModule.price2}>
+                                    +${form.membresia === "yearly" ? 20 : 2}
+                                    /
+                                    {form.membresia === "yearly" ? "yr" : "mo"}
+                                </p>
                             </div>
                         }
                     </div>
                 </div>
                 <div className={FinishingUpModule.totalPrice}>
                     <p className={FinishingUpModule.informacion}>Total({form.membresia === "yearly" ? "Per year" : "Per month"})</p>
-                    <p className={FinishingUpModule.total}>${precio}/{form.membresia === "yearly" ? "yr" : "mo"}</p>
+                    <p className={FinishingUpModule.total}>${precioTotal1}/{form.membresia === "yearly" ? "yr" : "mo"}</p>
                 </div>
             </div>
         </section>

@@ -9,7 +9,6 @@ const PersonalInfo = () => {
     form,
     handleChange,
   } = useContext(formContext);
-  console.log(form)
   let {error} = errorForm(form);
   return (
     <>

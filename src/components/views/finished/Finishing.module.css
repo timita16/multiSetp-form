@@ -1,0 +1,17 @@
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.h1 {
+    color: hsl(213, 96%, 18%);
+}
+.subtitle {
+    opacity: 0.4;
+    font-size: 16px;
+    text-align: center;
+    word-spacing: 2px;
+    font-weight: 500;
+    line-height: 20px;
+}

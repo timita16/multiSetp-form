@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Route, Routes } from "react-router-dom";
 import Step1 from '../../../routes/Step1';
 import Step2 from '../../../routes/Step2';
 import Step3 from '../../../routes/Step3';
 import Step4 from '../../../routes/Step4';
 import Step5 from '../../../routes/Step5';
+import formContext from '../../context/Form';
 import Error from '../error/Error';
 import FormMudule from "./Form.module.css"
 
 const Form = () => {
+    let {
+        handleSubmit
+      } = useContext(formContext)
   return (
-      <form className={FormMudule.form}>
+      <form onSubmit={handleSubmit} className={FormMudule.form}>
           <Routes>
               <Route path='/' element={<Step1 />} />
               <Route path='/plan2' element={<Step2 />} />
