@@ -5,19 +5,18 @@ const precioTotal = (precio, check, membresia) => {
         checkBoxStorage,
         customizableProfile
     } = check
-    //arreglar si estan mas de uno hablitados
     if(onlineService && membresia==="monthly"){
         price+=1;
+        // eslint-disable-next-line no-unused-expressions
+        checkBoxStorage ? price+=2: ""
+        // eslint-disable-next-line no-unused-expressions
+        customizableProfile ? price+=2: ""
     } else if(onlineService && membresia==="yearly"){
         price+=10;
-    } else if(checkBoxStorage && membresia==="monthly"){
-        price+=2;
-    } else if(checkBoxStorage && membresia==="yearly"){
-        price+=20;
-    } else if(customizableProfile && membresia==="monthly"){
-        price+=2;
-    } else if(customizableProfile && membresia==="yearly"){
-        price+=20;
+        // eslint-disable-next-line no-unused-expressions
+        checkBoxStorage ? price+=20: ""
+        // eslint-disable-next-line no-unused-expressions
+        customizableProfile ? price+=20: ""
     } 
 
     return price

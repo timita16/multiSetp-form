@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ButtonModule from "./Button.module.css";
 import { NavLink } from 'react-router-dom';
 import {useNavigate} from "react-router-dom"
+import formContext from '../../context/Form';
 
 const Button = ({back, next, error,confirm}) => {
   const navigate = useNavigate();
+  
+  let {
+    handleUrl
+  } = useContext(formContext);
 
   const handleError = () => {
-    if(Object.values(error).length === 0) return navigate(`/${next}`) 
+    if(Object.values(error).length === 0) {
+      navigate(`/${next}`) 
+      handleUrl(next)
+    }
   }
   return (
     <section className={`${ButtonModule.SectionButton} ${!back && ButtonModule.SectionButtonFalso} ` }>
         {
             !back 
             ? ""
-            : <NavLink to={back} className={`${ButtonModule.button} ${ButtonModule.back}`}>
+            : <NavLink to={back} className={`${ButtonModule.button} ${ButtonModule.back}`} onClick={() => handleUrl(back)}>
                 Go back
             </NavLink> 
         }

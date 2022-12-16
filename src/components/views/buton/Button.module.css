@@ -14,7 +14,9 @@
     justify-content: end;
 }
 .back {
-
+    text-decoration: none;
+    color: gray;
+    opacity: 0.8;
 }
 .next {
     background-color: hsl(213, 96%, 18%);
@@ -24,6 +26,7 @@
     font-size: 12px;
     outline: none;
     padding: 10px;
+    cursor: pointer;
 }
 .confimar {
     background-color: hsl(243, 100%, 62%);
@@ -32,4 +35,13 @@
     border-radius: 5px;
     border: none;
     outline: none;
+    cursor: pointer;
+
+}
+@media all and (min-width:1100px) {
+    .SectionButton {
+        position: relative;
+        margin: 0%;
+        padding: 0%;
+    }
 }

@@ -18,6 +18,7 @@ const formContext = createContext();
 export const FormProvider = ({children}) => {
     const [form, setForm] = useState(initialForm);
     const [check, setCheck] = useState(initialCheck)
+    const [url, setUrl] = useState("1");
 
     const handleChange = (e) => {
         setForm({
@@ -33,16 +34,20 @@ export const FormProvider = ({children}) => {
         });
     }
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log("Enviar");
+    
+    const handleUrl = (path) => {
+      console.log(path)
+      let numero = path[path.length-1];
+      setUrl(numero === "/" ? "1" : numero)
     }
+
     let datas = {
       handleChange,
       form,
-      handleSubmit,
       handleCheck,
       check,
+      handleUrl,
+      url
     }
   return <formContext.Provider value={datas}>{children}</formContext.Provider>
 }

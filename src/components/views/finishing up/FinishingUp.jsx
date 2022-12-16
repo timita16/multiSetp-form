@@ -52,7 +52,7 @@ const FinishingUp = () => {
                         {
                             check.customizableProfile &&
                             <div className={FinishingUpModule.divPriceInfo}>
-                                <p className={FinishingUpModule.informacion}>Online service</p>
+                                <p className={FinishingUpModule.informacion}>Customizable profile</p>
                                 <p className={FinishingUpModule.price2}>
                                     +${form.membresia === "yearly" ? 20 : 2}
                                     /
