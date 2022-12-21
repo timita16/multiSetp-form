@@ -1,15 +1,15 @@
-import errorForm from '../../helpers/errorForm';
 import Button from '../buton/Button'
 import PersonalModule from "./Personal.module.css"
 import formContext from '../../context/Form';
-import { useContext } from 'react';
+import { useContext} from 'react';
 
 const PersonalInfo = () => {
+  
   let {
     form,
     handleChange,
+    errores,
   } = useContext(formContext);
-  let {error} = errorForm(form);
   return (
     <>
       <section className={PersonalModule.sectionPrincipal}>
@@ -31,9 +31,9 @@ const PersonalInfo = () => {
               id='name'
               onChange={handleChange}
               value={form.name}
-              className={`${PersonalModule.input} ${error.name && PersonalModule.inputError}`}
+              className={`${PersonalModule.input} ${errores.name && PersonalModule.inputError}`}
             />
-            {error.name && <p className={PersonalModule.msgError}>{error.name}</p>}
+            {errores.name && <p className={PersonalModule.msgError}>{errores.name}</p>}
           </div>
           <div className={PersonalModule.divLabelInput}>
             <label 
@@ -48,9 +48,9 @@ const PersonalInfo = () => {
               id='email'
               onChange={handleChange}
               value={form.email}
-              className={`${PersonalModule.input} ${error.email && PersonalModule.inputError}`}
+              className={`${PersonalModule.input} ${errores.email && PersonalModule.inputError}`}
             />
-            {error.email && <p className={PersonalModule.msgError}>{error.email}</p>}
+            {errores.email && <p className={PersonalModule.msgError}>{errores.email}</p>}
           </div>
           <div className={PersonalModule.divLabelInput}>
             <label 
@@ -65,13 +65,13 @@ const PersonalInfo = () => {
               id='number'
               onChange={handleChange}
               value={form.number}
-              className={`${PersonalModule.input} ${error.number && PersonalModule.inputError}`}
+              className={`${PersonalModule.input} ${errores.number && PersonalModule.inputError}`}
             />
-            {error.number && <p className={PersonalModule.msgError}>{error.number}</p>}
+            {errores.number && <p className={PersonalModule.msgError}>{errores.number}</p>}
           </div>
         </div>
       </section>
-      <Button next="plan2" error={error}   />
+      <Button next="plan2" />
     </>
   )
 }

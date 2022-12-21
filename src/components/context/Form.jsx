@@ -1,4 +1,5 @@
-import {createContext, useState } from 'react'
+import {createContext, useEffect, useState } from 'react'
+import errorForm from '../helpers/errorForm';
 
 const initialForm = {
     name:"",
@@ -17,10 +18,19 @@ const formContext = createContext();
 
 export const FormProvider = ({children}) => {
     const [form, setForm] = useState(initialForm);
+    const [errores, setErrores] = useState({})
     const [check, setCheck] = useState(initialCheck)
     const [url, setUrl] = useState("1");
 
+    let {error} = errorForm(form);
+
+    useEffect(() => {
+      setErrores(error)
+    }, [form])
+    
+
     const handleChange = (e) => {
+        setErrores(error)
         setForm({
             ...form,
             [e.target.name]:e.target.value
@@ -36,9 +46,8 @@ export const FormProvider = ({children}) => {
 
     
     const handleUrl = (path) => {
-      console.log(path)
       let numero = path[path.length-1];
-      setUrl(numero === "/" ? "1" : numero)
+      setUrl(numero === "/" ? "1" : numero);
     }
 
     let datas = {
@@ -47,7 +56,10 @@ export const FormProvider = ({children}) => {
       handleCheck,
       check,
       handleUrl,
-      url
+      url,
+      errores,
+      setErrores,
+      error
     }
   return <formContext.Provider value={datas}>{children}</formContext.Provider>
 }

@@ -4,11 +4,13 @@ import { NavLink } from 'react-router-dom';
 import {useNavigate} from "react-router-dom"
 import formContext from '../../context/Form';
 
-const Button = ({back, next, error,confirm}) => {
+const Button = ({back, next,confirm}) => {
   const navigate = useNavigate();
   
   let {
-    handleUrl
+    handleUrl,
+    setErrores,
+    error
   } = useContext(formContext);
 
   const handleError = () => {
@@ -16,6 +18,7 @@ const Button = ({back, next, error,confirm}) => {
       navigate(`/${next}`) 
       handleUrl(next)
     }
+    return setErrores(error)
   }
   return (
     <section className={`${ButtonModule.SectionButton} ${!back && ButtonModule.SectionButtonFalso} ` }>
