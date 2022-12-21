@@ -44,4 +44,11 @@
         margin: 0%;
         padding: 0%;
     }
+    .next {
+        font-size: 16px;
+        padding: 14px;
+    }
+    .back {
+        font-size: 18px;
+    }
 }

@@ -17,7 +17,6 @@
     align-items: center;
     position: relative;
 }
-
 .labelL {
     width: 100%;
     padding: 12px 20px 25px 60px;
@@ -28,7 +27,6 @@
     font-weight: 500;
     cursor: pointer;
 }
-
 .labelL::before {
     content: url("../../../assets/images/icon-arcade.svg");
     position: absolute;
@@ -202,5 +200,20 @@
     .subtitle {
         margin-top: 0%;
         margin-bottom: 25px;
+    }
+    .labelL, .labelL2, .labelL3 {
+        padding: 15px 23px 28px 62px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+    .labelL::after, .labelL2::after, .labelL3::after {
+        font-size: 15px
+    }
+    .divPlan {
+        padding: 18px;
+    }
+    .labelPlan {
+        font-size: 17px;
     }
 }

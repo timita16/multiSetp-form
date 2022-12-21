@@ -154,4 +154,17 @@
         margin-top: 0%;
         margin-bottom: 25px;
     }
+    .label {
+        font-size: 18px;
+        padding: 13px 18px 25px 38px;
+    }
+    .labelMonth1::after, .labelText::before, .labelYear1::after {
+        font-size: 15px;
+    }
+    .labelMonth2::after, .labelText2::before, .labelYear2::after {
+        font-size: 15px;
+    }
+    .labelMonth3::after, .labelText3::before, .labelYear3::after {
+        font-size: 15px;
+    }
 }
