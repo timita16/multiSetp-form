@@ -8,7 +8,7 @@ import precioTotal from '../../helpers/precioTotal';
 const FinishingUp = () => {
     let {
         form,
-        check
+        check,
       } = useContext(formContext);
     let precio = price(form.plan, form.membresia);
     let precioTotal1 = precioTotal(precio, check, form.membresia) 

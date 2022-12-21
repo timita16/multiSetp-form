@@ -31,6 +31,7 @@ const PersonalInfo = () => {
               id='name'
               onChange={handleChange}
               value={form.name}
+              autoComplete="false"
               className={`${PersonalModule.input} ${errores.name && PersonalModule.inputError}`}
             />
             {errores.name && <p className={PersonalModule.msgError}>{errores.name}</p>}
@@ -48,6 +49,7 @@ const PersonalInfo = () => {
               id='email'
               onChange={handleChange}
               value={form.email}
+              autoComplete="false"
               className={`${PersonalModule.input} ${errores.email && PersonalModule.inputError}`}
             />
             {errores.email && <p className={PersonalModule.msgError}>{errores.email}</p>}
@@ -65,6 +67,7 @@ const PersonalInfo = () => {
               id='number'
               onChange={handleChange}
               value={form.number}
+              autoComplete="false"
               className={`${PersonalModule.input} ${errores.number && PersonalModule.inputError}`}
             />
             {errores.number && <p className={PersonalModule.msgError}>{errores.number}</p>}

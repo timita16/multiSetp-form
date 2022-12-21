@@ -12,13 +12,12 @@ const Button = ({back, next,confirm}) => {
     setErrores,
     error
   } = useContext(formContext);
-
   const handleError = () => {
     if(Object.values(error).length === 0) {
       navigate(`/${next}`) 
       handleUrl(next)
     }
-    return setErrores(error)
+    setErrores(error)
   }
   return (
     <section className={`${ButtonModule.SectionButton} ${!back && ButtonModule.SectionButtonFalso} ` }>

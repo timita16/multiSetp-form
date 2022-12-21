@@ -25,8 +25,8 @@ export const FormProvider = ({children}) => {
     let {error} = errorForm(form);
 
     useEffect(() => {
-      setErrores(error)
-    }, [form])
+      setErrores({})
+    }, [])
     
 
     const handleChange = (e) => {
@@ -44,7 +44,6 @@ export const FormProvider = ({children}) => {
         });
     }
 
-    
     const handleUrl = (path) => {
       let numero = path[path.length-1];
       setUrl(numero === "/" ? "1" : numero);

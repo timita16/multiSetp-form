@@ -16,8 +16,8 @@ const errorForm = (form) => {
     //NUMBER
     if(!form.number) {
         error.number = "Field required"
-    } else{
-
+    } else if(form.number.length < 8 || form.number.length > 9) {
+        error.number = "Name must have eight character"
     }
   return {
     error
