@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./React%20App.png.jpg)
+![](./ReactApp.png)
 
 ### Links
 
